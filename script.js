@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // --- 2. Active Link Highlighting (ScrollSpy) ---
     const sections = document.querySelectorAll("section");
-    const navLinks = document.querySelectorAll(".nav-link");
+    const navLinkItems = document.querySelectorAll(".nav-link");
 
     window.addEventListener("scroll", () => {
         let current = "";
@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
 
-        navLinks.forEach((link) => {
+        navLinkItems.forEach((link) => {
             link.classList.remove("active");
             if (link.getAttribute("href") === `#${current}`) {
                 link.classList.add("active");

@@ -713,9 +713,9 @@ footer {
 
 /* --- Animations --- */
 .fade-in {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
 }
 
 .fade-in.visible,
@@ -725,7 +725,7 @@ footer {
 .project-card.fade-in.visible,
 .container.fade-in.visible {
     opacity: 1 !important;
-    transform: translateY(0) !important;
+    transform: none !important;
 }
 
 /* --- Responsive Design --- */

@@ -10,7 +10,24 @@ document.addEventListener("DOMContentLoaded", () => {
     if (currentYearElement) {
         currentYearElement.textContent = new Date().getFullYear();
     }
-    
+
+    // --- Hamburger Menu Toggle ---
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        hamburger.classList.toggle('active');
+    });
+
+    // Close mobile menu when clicking a link
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            hamburger.classList.remove('active');
+        });
+    });
+
     // --- 1. Fade-In and Progress Bar Animations ---
     const observerOptions = {
         root: null,

@@ -71,6 +71,11 @@ body {
     letter-spacing: 1px;
 }
 
+.nav-menu {
+    display: flex;
+    align-items: center;
+}
+
 .nav-links {
     list-style: none;
     display: flex;
@@ -86,6 +91,77 @@ body {
 
 .nav-links a:hover, .nav-links a.active {
     color: var(--primary);
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 4px;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-main);
+    transition: var(--transition);
+}
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+    .nav-container {
+        padding: 1rem;
+    }
+
+    .logo {
+        font-size: 1.3rem;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: var(--bg-main);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        padding: 2rem 0;
+        gap: 1.5rem;
+    }
+
+    .nav-links.active {
+        left: 0;
+    }
+
+    .nav-links li {
+        margin: 0.5rem 0;
+    }
+
+    .nav-links a {
+        font-size: 1.1rem;
+        padding: 0.5rem 1rem;
+        display: block;
+    }
+
+    /* Hamburger Animation */
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
 }
 
 /* --- Layout & Utility Classes --- */
@@ -622,20 +698,6 @@ section {
     color: white;
 }
 
-/* Mobile responsive */
-@media (max-width: 768px) {
-    .social-links {
-        gap: 1rem;
-        justify-content: center;
-    }
-
-    .social-link {
-        width: 50px;
-        height: 50px;
-        font-size: 1.2rem;
-    }
-}
-
 /* --- Footer --- */
 footer {
     text-align: center;
@@ -669,167 +731,233 @@ footer {
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     }
 
+    .nav-container {
+        padding: 1rem;
+    }
+
+    .logo {
+        font-size: 1.3rem;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: var(--bg-main);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        padding: 2rem 0;
+        gap: 1.5rem;
+    }
+
+    .nav-links.active {
+        left: 0;
+    }
+
+    .nav-links li {
+        margin: 0.5rem 0;
+    }
+
+    .nav-links a {
+        font-size: 1.1rem;
+        padding: 0.5rem 1rem;
+        display: block;
+    }
+
+    /* Hamburger Animation */
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
     /* Better hero section on mobile */
     .hero {
         padding-top: 80px; /* Account for fixed navbar */
         min-height: 100vh;
-    }
-
-    /* Ensure hero text is readable on gradient background */
-    .hero-text {
-        background: rgba(0, 0, 0, 0.1);
-        padding: 1.5rem;
-        border-radius: var(--border-radius);
-        backdrop-filter: blur(5px);
-    }
-
-    /* Hero Section */
-    .hero {
-        min-height: 100vh;
         padding: 1rem;
     }
+
     .hero-content {
         flex-direction: column;
         text-align: center;
         gap: 2rem;
         padding: 1rem;
     }
-    .hero-text { text-align: center; }
+
+    .hero-text {
+        text-align: center;
+        background: rgba(0, 0, 0, 0.1);
+        padding: 1.5rem;
+        border-radius: var(--border-radius);
+        backdrop-filter: blur(5px);
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero h2 {
+        font-size: 1.4rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
     .profile-photo {
         width: 150px;
         height: 150px;
-        border-width: 4px;
     }
-    .hero h1 {
-        font-size: 2.2rem;
-        line-height: 1.2;
-    }
-    .hero h2 {
-        font-size: 1.4rem;
-        margin-bottom: 1rem;
-    }
-    .hero p {
-        font-size: 1rem;
-        margin-bottom: 2rem;
-    }
+
     .hero-buttons {
         flex-direction: column;
         gap: 1rem;
-        width: 100%;
-        max-width: 300px;
-        margin: 0 auto;
-    }
-    .btn {
-        width: 100%;
-        padding: 1rem 1.5rem;
-        font-size: 1rem;
+        align-items: center;
     }
 
-    /* General Sections */
-    .container {
-        padding: 1rem;
-        margin: 0;
+    .hero-buttons .btn {
+        width: 100%;
+        max-width: 250px;
     }
+
+    /* Section improvements */
+    section {
+        padding: 3rem 1rem;
+        scroll-margin-top: 80px;
+    }
+
     .section-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
         margin-bottom: 2rem;
     }
 
-    /* About Section */
-    .about-content {
-        padding: 1.5rem;
+    .container {
+        padding: 0 1rem;
     }
 
-    /* Skills Section */
-    .skills-container {
+    /* Card improvements */
+    .card {
         padding: 1.5rem;
-    }
-    .skill-item {
         margin-bottom: 1.5rem;
     }
 
-    /* Projects Section */
-    .projects-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-    .project-card {
-        padding: 1.5rem;
+    /* Skills section */
+    .skill-category {
+        margin-bottom: 1.5rem;
     }
 
-    /* Certificates Section */
+    .skill-category h3 {
+        font-size: 1.1rem;
+    }
+
+    /* Certificates grid */
     .certificates-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
+
     .certificate-card {
-        margin: 0.5rem 0;
+        flex-direction: column;
     }
+
     .certificate-image {
         height: 150px;
     }
 
-    /* Awards Section */
+    .certificate-content {
+        padding: 1rem;
+    }
+
+    /* Awards grid */
     .awards-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
+
     .award-card {
-        margin: 0.5rem 0;
+        flex-direction: column;
     }
+
     .award-image {
         height: 150px;
     }
-    .award-badge {
-        width: 40px;
-        height: 40px;
-        font-size: 1rem;
-    }
-    .contact-info, .contact-form {
-        padding: 1.5rem;
-    }
 
-    /* Social Media Icons */
-    .social-links {
-        gap: 0.8rem;
-        margin-top: 1.5rem;
-    }
-    .social-link {
-        width: 45px;
-        height: 45px;
-        font-size: 1.1rem;
-    }
-
-    /* Cards */
-    .card {
-        padding: 1.5rem;
-        margin: 0.5rem 0;
-    }
-
-    /* Touch-friendly interactions */
-    .social-link:active {
-        transform: scale(0.95);
-    }
-
-    .btn:active {
-        transform: scale(0.98);
-    }
-
-    /* Better text readability */
-    .hero p {
-        line-height: 1.5;
-        word-wrap: break-word;
-    }
-
-    /* Improved form inputs */
-    .form-group input, .form-group textarea {
-        font-size: 16px; /* Prevents zoom on iOS */
+    .award-content {
         padding: 1rem;
     }
 
-    /* Better card spacing */
-    .card {
+    /* Projects section */
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .project-card {
+        padding: 1.5rem;
+    }
+
+    /* Contact section */
+    .contact-wrapper {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .contact-info, .contact-form {
+        width: 100%;
+    }
+
+    .contact-form .card {
+        padding: 1.5rem;
+    }
+
+    .form-group {
         margin-bottom: 1rem;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        width: 100%;
+        padding: 0.8rem;
+        border: 1px solid #ddd;
+        border-radius: var(--border-radius);
+        font-size: 1rem;
+    }
+
+    .social-links {
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .social-link {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+
+    /* Footer */
+    footer {
+        padding: 1.5rem 1rem;
+        text-align: center;
     }
 }
 

@@ -510,7 +510,6 @@ section {
     backdrop-filter: blur(10px);
     display: flex;
     flex-direction: column;
-}
     position: relative;
 }
 

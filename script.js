@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 'Alert system with customizable thresholds',
                 'Web-based dashboard for monitoring'
             ],
-            githubLink: 'https://github.com/logaanand/crowd-behaviour-detection',
+            githubLink: 'https://github.com/loga-anand/Abnormal-Crowd-Detection-Using-Swarm-Based-Segmentation-',
             liveLink: null
         },
         'employee-attrition': {
@@ -128,7 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 'Real-time monitoring of suspicious activity',
                 'Dashboard for classification transparency'
             ],
-            githubLink: 'https://github.com/logaanand/fake-bot-detection',
+            githubLink: 'https://github.com/loga-anand/Fake-Bot-Detection-on-X',
             liveLink: null
         }
     };

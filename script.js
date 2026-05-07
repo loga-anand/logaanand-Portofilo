@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 'Web-based dashboard for monitoring'
             ],
             githubLink: 'https://github.com/loga-anand/Abnormal-Crowd-Detection-Using-Swarm-Based-Segmentation-',
-            liveLink: null
+            liveLink: 'https://github.com/loga-anand/Abnormal-Crowd-Detection-Using-Swarm-Based-Segmentation-'
         },
         'employee-attrition': {
             title: 'Employee Attrition Prediction',
@@ -113,7 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 'Predictive insights for HR decision-making'
             ],
             githubLink: 'https://github.com/logaanand/employee-attrition-prediction',
-            liveLink: null
+            liveLink: 'https://github.com/logaanand/employee-attrition-prediction'
         },
         'fake-bot-detection': {
             title: 'Fake Bot Detection on X (Explainable AI)',
@@ -129,7 +129,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 'Dashboard for classification transparency'
             ],
             githubLink: 'https://github.com/loga-anand/Fake-Bot-Detection-on-X',
-            liveLink: null
+            liveLink: 'https://github.com/loga-anand/Fake-Bot-Detection-on-X'
         }
     };
 

@@ -206,31 +206,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const contactModalClose = document.getElementById('contactModalClose');
     const contactModalOk = document.getElementById('contactModalOk');
 
-    // Handle form submission
+    // Show success modal when form is submitted
     contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-
-        const formData = new FormData(contactForm);
-
-        // Send form data to Formspree in background
-        fetch('https://formspree.io/f/mqendjal', {
-            method: 'POST',
-            body: formData,
-            headers: {
-                'Accept': 'application/json'
-            }
-        }).then(response => {
-            console.log('Form submitted successfully');
-        }).catch(error => {
-            console.error('Error sending form:', error);
-        });
-
-        // Show success modal immediately
-        contactModal.classList.add('active');
-        document.body.style.overflow = 'hidden';
-        
-        // Reset form
-        contactForm.reset();
+        // Let Formspree handle the form submission naturally
+        // Show success modal after a short delay
+        setTimeout(() => {
+            contactModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }, 500);
     });
 
     // Close contact modal function
@@ -250,10 +233,15 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // Close modal with Escape key
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && contactModal.classList.contains('active')) {
-            closeContactModal();
-        }
-    });
+
+// Close modal with Escape key
+
+document.addEventListener('keydown', (e) => {
+
+    if (e.key === 'Escape' && contactModal.classList.contains('active')) {
+
+        closeContactModal();
+
+    }
+
 });

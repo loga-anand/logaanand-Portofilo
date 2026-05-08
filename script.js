@@ -206,40 +206,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const contactModalClose = document.getElementById('contactModalClose');
     const contactModalOk = document.getElementById('contactModalOk');
 
-    // Handle form submission with Formspree
-    contactForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-
-        const formData = new FormData(contactForm);
-
-        try {
-            const response = await fetch('https://formspree.io/f/mqendjal', {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            });
-
-            if (response.ok) {
-                console.log('Form submitted successfully to Formspree');
-                
-                // Show success modal
-                contactModal.classList.add('active');
-                document.body.style.overflow = 'hidden';
-
-                // Reset form
-                contactForm.reset();
-            } else {
-                console.error('Formspree submission failed');
-                alert('Form submission failed. Please try again.');
-            }
-        } catch (error) {
-            console.error('Error sending form:', error);
-            alert('Error sending message. Please check your internet connection.');
-        }
-    });
-
     // Close contact modal function
     function closeContactModal() {
         contactModal.classList.remove('active');

@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const projectData = {
         'crowd-detection': {
             title: 'Crowd Behaviour Detection',
-            image: 'project1.jpg',
+            image: 'crowdimg.png',
             techStack: 'Python, OpenCV, TensorFlow, Scikit-learn, NumPy, Pandas',
             description: 'An advanced computer vision system designed to analyze crowd dynamics, detect anomalies, and prevent potential hazards using swarm intelligence algorithms and ensemble learning techniques. The system processes real-time video feeds to identify unusual crowd behaviors and alert security personnel.',
             features: [
@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         'employee-attrition': {
             title: 'Employee Attrition Prediction',
-            image: 'project2.jpg',
+            image: 'attri img.jpg',
             techStack: 'Python, Scikit-learn, Pandas, Matplotlib, Seaborn, Jupyter Notebook',
             description: 'A machine learning model built to predict employee turnover by analyzing HR data, helping organizations proactively improve retention strategies and workplace satisfaction. The system uses various classification algorithms to identify employees at risk of leaving.',
             features: [
@@ -112,12 +112,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 'Model performance evaluation metrics',
                 'Predictive insights for HR decision-making'
             ],
-            githubLink: 'https://github.com/logaanand/employee-attrition-prediction',
-            liveLink: 'https://github.com/logaanand/employee-attrition-prediction'
+            githubLink: 'https://github.com/loga-anand/Employee-Attrition-Prediction',
+            liveLink: 'https://github.com/loga-anand/Employee-Attrition-Prediction'
         },
         'fake-bot-detection': {
             title: 'Fake Bot Detection on X (Explainable AI)',
-            image: 'project3.jpg',
+            image: 'botimg.png',
             techStack: 'Machine Learning, Explainable AI (XAI), NLP',
             description: 'An intelligent system designed to detect fake accounts and social bots on the X platform by analyzing user behavior, content patterns, and network activity. It provides transparent, interpretable predictions so users can understand why an account is classified as malicious.',
             features: [

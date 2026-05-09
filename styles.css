@@ -250,6 +250,12 @@ section {
     left: 100%;
 }
 
+.btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+    transform: none;
+}
+
 .btn-primary {
     background: linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%);
     color: white;
@@ -403,6 +409,25 @@ section {
 .project-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.project-image {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: var(--bg-secondary);
+    overflow: hidden;
+}
+
+.project-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: var(--transition);
+}
+
+.project-card:hover .project-img {
+    transform: scale(1.04);
 }
 
 .project-content { padding: 2rem; flex: 1; display: flex; flex-direction: column; }
@@ -931,7 +956,7 @@ footer {
     }
 
     .project-card {
-        padding: 1.5rem;
+        padding: 0;
     }
 
     /* Contact section */
@@ -1119,7 +1144,7 @@ footer {
 
     /* Projects on small screens */
     .project-card {
-        padding: 1rem;
+        padding: 0;
     }
 
     .project-content h3 {
@@ -1254,12 +1279,17 @@ footer {
     border-radius: var(--border-radius);
     overflow: hidden;
     box-shadow: var(--card-shadow);
+    aspect-ratio: 4 / 3;
+    background: var(--bg-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .modal-image img {
     width: 100%;
-    height: 200px;
-    object-fit: cover;
+    height: 100%;
+    object-fit: contain;
     display: block;
 }
 
@@ -1311,6 +1341,18 @@ footer {
     justify-content: center;
 }
 
+#contactSuccessModal .modal-content {
+    max-width: 460px;
+}
+
+#contactSuccessModal .modal-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    text-align: center;
+}
+
 /* Modal Mobile Responsive */
 @media (max-width: 768px) {
     .modal-content {
@@ -1333,7 +1375,7 @@ footer {
     }
 
     .modal-image img {
-        height: 150px;
+        height: 100%;
     }
 
     .modal-links {

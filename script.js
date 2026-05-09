@@ -205,12 +205,48 @@ document.addEventListener("DOMContentLoaded", () => {
     const contactModal = document.getElementById('contactSuccessModal');
     const contactModalClose = document.getElementById('contactModalClose');
     const contactModalOk = document.getElementById('contactModalOk');
+    const contactSubmitButton = contactForm.querySelector('button[type="submit"]');
+
+    function showContactModal() {
+        contactModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
 
     // Close contact modal function
     function closeContactModal() {
         contactModal.classList.remove('active');
         document.body.style.overflow = 'auto';
     }
+
+    contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const originalButtonText = contactSubmitButton.textContent;
+        contactSubmitButton.disabled = true;
+        contactSubmitButton.textContent = 'Sending...';
+
+        try {
+            const response = await fetch(contactForm.action, {
+                method: contactForm.method,
+                body: new FormData(contactForm),
+                headers: {
+                    Accept: 'application/json'
+                }
+            });
+
+            if (!response.ok) {
+                throw new Error('Form submission failed');
+            }
+
+            contactForm.reset();
+            showContactModal();
+        } catch (error) {
+            alert('Sorry, your message could not be sent. Please try again.');
+        } finally {
+            contactSubmitButton.disabled = false;
+            contactSubmitButton.textContent = originalButtonText;
+        }
+    });
 
     // Event listeners for contact modal
     contactModalClose.addEventListener('click', closeContactModal);
